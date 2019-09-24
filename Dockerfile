@@ -1,7 +1,8 @@
 FROM centos:centos7.6.1810
 MAINTAINER chenjh "842761733@qq.com"
 COPY fonts/* /usr/share/fonts/chienes/
-RUN wget -nv -O /opt/ https://mboscloud.oss-cn-hangzhou.aliyuncs.com/kkfileview/kkFileView-2.2.0-SNAPSHOT.tar.gz &&\
+RUN yum install -y wget &&\
+    wget -nv -O /opt/ https://mboscloud.oss-cn-hangzhou.aliyuncs.com/kkfileview/kkFileView-2.2.0-SNAPSHOT.tar.gz &&\
     yum install -y kde-l10n-Chinese &&\
 	yum install -y glibc-common &&\
 	yum install -y fontconfig &&\
@@ -13,7 +14,6 @@ RUN wget -nv -O /opt/ https://mboscloud.oss-cn-hangzhou.aliyuncs.com/kkfileview/
 	LANG="zh_CN.UTF-8" &&\
 	ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
 	yum install -y java-1.8.0-openjdk.x86_64 &&\
-	yum install -y wget &&\
 	yum install -y libXext.x86_64 &&\
 	yum groupinstall -y  "X Window System" &&\
 	cd /tmp &&\
