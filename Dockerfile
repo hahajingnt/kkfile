@@ -2,7 +2,7 @@ FROM centos:centos7.6.1810
 MAINTAINER chenjh "842761733@qq.com"
 COPY fonts/* /usr/share/fonts/chienes/
 RUN yum install -y wget &&\
-    wget -nv -O /opt/ https://mboscloud.oss-cn-hangzhou.aliyuncs.com/kkfileview/kkFileView-2.2.0-SNAPSHOT.tar.gz &&\
+    wget -nv -O /opt/kkFileView-2.2.0-SNAPSHOT.tar.gz https://mboscloud.oss-cn-hangzhou.aliyuncs.com/kkfileview/kkFileView-2.2.0-SNAPSHOT.tar.gz &&\
     yum install -y kde-l10n-Chinese &&\
 	yum install -y glibc-common &&\
 	yum install -y fontconfig &&\
